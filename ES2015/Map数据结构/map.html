@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    const map = new Map()
+    const obj = {p:'hi'}
+
+    map.set(obj,'ok')//obj对象作为key,Map能用非字符串或者数字作为key的特性
+    map.get(obj)
+    console.log(map.get(obj))//ok
+    map.has(obj)//true
+    map.delete(obj)//true
+    map.has(obj)//false
+
+    //Map实例属性和方法如下
+    //1.size 获取成员的数量
+    //2.set 设置成员key和value
+    //3.get 获取成员属性值
+    //4.has 判断成员是否存在
+    //5.delete 删除成员
+    //6.clear 清空所有
+
+    const map2 = new Map()
+    map2.set('aa',100);
+    map2.set('bb',200);
+    let size = map2.size
+    console.log(size)//2
+    let a = map2.get('aa')
+    console.log(a)//100
+    let has = map2.has('aa')
+    console.log(has)//true
+    let d = map2.delete('aa')
+    console.log(d)//true
+    let has2 = map2.has('aa')
+    console.log(has2)//false
+    map2.clear()
+    console.log(map2)//Map(0) {}
+
+    //Map实例的遍历
+    //1.keys() 返回键名的遍历器
+    //2.values() 返回键值的遍历器 
+    //3.entries() 返回所有成员
+    //4.forEach() 遍历Map所有成员
+
+    const m = new Map()
+    m.set('a',100)
+    m.set('b',200)
+    for(let key of m.keys()){
+        console.log(key)//a b
+    }
+    for(let i of m.values()){
+        console.log(i)//100 200
+    }
+    for(let i of m.entries()){
+        console.log(i)//['a',100] ['b',200]
+    }
+    
+    </script>
+</body>
+</html>
